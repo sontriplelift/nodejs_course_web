@@ -1,0 +1,21 @@
+1. not use git:
+"beautiful": "prettier --single-quote --trailing-comma all --tab-width 4 --write \"src/**/*.{js,json,scss}\""
+"beautiful": "lint-staged"
+
+
+2. after add file into git:
+"beautiful": "lint-staged";
+
+{
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
+  }
+},
+
+
+3. auto before commit:
+"husky": {
+    "hooks": {
+        "pre-commit": "lint-staged"
+    }
+},
